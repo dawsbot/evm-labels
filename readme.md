@@ -104,6 +104,14 @@ tokenContract.isTokenContractAddress(OATHER_ADDRESS);
 
 Each label is currently pulled with custom scripts. Partially documented, partially not.
 
+### Generic Scraper (single/all)
+
+1. [Setup selenium](https://www.selenium.dev/documentation/webdriver/getting_started/install_drivers/) by downloading relevant drivers (chrome) and adding to path.
+2. Run scraper located at `scripts` with command `node scrape-all` (ExtractAll) or `node scrape-all labelName`(ExtractSingle) saved at `src/mainnet/all-json`
+4. Login to etherscan. (ENV variables support for quick login, `ETHERSCAN_USER` `ETHERSCAN_PASS`) Eg.`export ETHERSCAN_USER=username123`
+5. Wait for completion ~20-30 minutes
+6. To generate combined-labels after scraping all, run `node combined-all-json` located at `scripts` which will save as `all.json` at `src/mainnet/all-json`
+
 ### Phish / Hack addresses
 
 1. Install [tampermonkey](https://chrome.google.com/webstore/detail/tampermonkey/dhdgffkkebhmkfjojejmpbldmpobfkfo?utm_source=chrome-ntp-icon)
